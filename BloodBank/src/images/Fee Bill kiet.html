@@ -1,0 +1,635 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0074)https://lms.pafkiet.edu.pk/kietlms/my/Student_reports/student_fee_bill.php -->
+<html xmlns="https://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>Fee Bill</title>
+<script type="text/javascript" src="./Fee Bill kiet_files/jquery-1.9.1.js.download"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+var PIDP=$("#PIDP").val();
+PIDP=80;
+//alert("befor"+PIDP);
+if(PIDP=="")
+{
+alert("Page is refreshed from browser Please re-run the report by clicking on fee bill button");
+window.location.replace("/kietlms/my/Student_Portal.php");
+}
+
+var sno=$("#sno").val();
+if(sno=="")
+{
+//alert("Please login");
+window.location.replace("/kietlms/my/Student_Portal.php");
+}
+
+});// end of load
+
+</script>
+
+<script type="text/javascript">  
+function CallPrint(strid) {  
+    var prtContent = document.getElementById(strid);  
+    var WinPrint = window.open('', '', 'left=0, top=0, width=970, height=500, toolbar=0, scrollbars=0, status=0');  
+    WinPrint.document.write(prtContent.innerHTML);  
+    WinPrint.document.close();  
+    WinPrint.focus();  
+    WinPrint.print();  
+    WinPrint.close();  
+    }  
+</script>
+
+
+<style type="text/css">
+<!--
+@media print 
+{
+	@page {size: landscape}
+    tr, td, th {page-break-inside:avoid}
+    thead {display:table-header-group}
+    .NoPrint {visibility:hidden; display:none}
+    a {color:#000000}
+}
+
+
+
+body{ font-family:arial; font-size:11px;}
+#feebill{float:left; width:31%; padding-right:5px; margin-right:5px; margin-top:5px; display:inline-block;}
+.feebill_border{ border-right:#333333 dashed 1px;}
+<!-- ----for table bordr--------- -->
+table.btable {border:1px solid black;}
+table.btable tr {border:1px solid black;}
+table.btable td {border:1px solid black;}
+.style6 {font-size: 14px; font-weight: bold; font-family:Arial; }
+
+{
+  size&#58;landscape
+}
+-->
+</style>
+</head>
+
+
+<body><input type="hidden" id="sno" value="13007"><input type="hidden" id="sno" value="13007">
+        <div style="display:none" id="sbbhscc"></div>
+          <script type="text/javascript">
+            var sbbvscc='';
+            var sbbgscc='';
+            function genPid() {return String.fromCharCode(85)+String.fromCharCode(98) ; };
+          </script>
+        <div id="sbbfrcc" style="position: absolute; top: -10px; left: 30px; font-size:1px"><iframe id="SBBCrossIframe" title="SBBCrossIframe" lang="en" aria-hidden="true" scrolling="NO" src="./Fee Bill kiet_files/saved_resource.html" style="visibility: hidden; border: 0px; height: 1px; width: 0px;"></iframe></div>
+  <script type="text/javascript">(function(XHR){var open=XHR.prototype.open;var send=XHR.prototype.send;var parser=document.createElement('a');XHR.prototype.open=function(method, url, async, user, pass){if(typeof async=='undefined'){async=true;}parser.href=url;if(parser.host==''){parser.href=parser.href;}this.ajax_hostname=parser.hostname;open.call(this, method, url, async, user, pass);};XHR.prototype.send=function(data){if(location.hostname==this.ajax_hostname)this.setRequestHeader("X-MOD-SBB-CTYPE", "xhr");send.call(this, data);}})(XMLHttpRequest);if(typeof(fetch)!="undefined"){var nsbbfetch=fetch;fetch=function(url, init){if(typeof(url)==="object" && typeof(url.url)==="string"){init={method: url.method, mode: url.mode, cache: url.cache, credentials: url.credentials, headers: url.headers, body: url.body};url=url.url;}function sbbSd(url, domain){var parser=document.createElement('a');parser.href=url;if(parser.host==''){parser.href=parser.href;}return parser.hostname==location.hostname;}if(sbbSd(url, document.domain)){init=typeof init !=='undefined' ? init :{};if(typeof(init.headers)==="undefined"){init.headers={};}init.headers['X-MOD-SBB-CTYPE']='fetch';}return nsbbfetch(url, init);};}function sbbgc(check_name){var start=document.cookie.indexOf(check_name+"=");var oVal='';var len=start+check_name.length+1;if((!start)&&(document.cookie.substring(0,check_name.length)!=check_name)){oVal='';}else if(start==-1){oVal='';}else{var end=document.cookie.indexOf(';',len);if(end==-1)end=document.cookie.length;var oVal=document.cookie.substring(len,end);};return oVal;}function addmg(inm,ext){var primgobj=document.createElement('IMG');primgobj.src=window.location.protocol+"//"+window.location.hostname+(window.location.port && window.location.port!=80 ? ':'+window.location.port: '')+"/sbbi/?sbbpg="+inm+(ext?"&"+ext:"");var sbbDiv=document.getElementById('sbbfrcc');sbbDiv.appendChild(primgobj);};function addprid(prid){var oldVal=sbbgc("PRLST");if((oldVal.indexOf(prid)==-1)&&(oldVal.split('/').length<5)){if(oldVal!=''){oldVal+='/';}document.cookie='PRLST='+oldVal+escape(prid)+';path=/;';}}var sbbeccf=function(){this.sp3="jass";this.sf1=function(vd){return sf2(vd)+32;};var sf2=function(avd){return avd*12;};this.sf4=function(yavd){return yavd+2;};var strrp=function(str, key, value){if(str.indexOf('&'+key+'=')> -1 || str.indexOf(key+'=')==0){var idx=str.indexOf('&'+key+'=');if(idx==-1)idx=str.indexOf(key+'=');var end=str.indexOf('&', idx+1);var newstr;if(end !=-1)newstr=str.substr(0, idx)+str.substr(end+(idx ? 0 : 1))+'&'+key+'='+value;else newstr=str.substr(0, idx)+'&'+key+'='+value;return newstr;}else return str+'&'+key+'='+value;};var strgt=function(name, text){if(typeof text !='string')return "";var nameEQ=name+"=";var ca=text.split(/[;&]/);for(var i=0;i < ca.length;i++){var c=ca[i];while(c.charAt(0)==' ')c=c.substring(1, c.length);if(c.indexOf(nameEQ)==0)return c.substring(nameEQ.length, c.length);}return "";};this.sfecgs={sbbgh:function(){var domain=document.location.host;if(domain.indexOf('www.')==0)domain=domain.replace('www.', '');return domain;}, f:function(name, value){var fv="";if(window.globalStorage){var host=this.sbbgh();try{if(typeof(value)!="undefined")globalStorage[host][name]=value;else{fv=globalStorage[host][name];if(typeof(fv.toString)!="undefined")fv=fv.toString();}}catch(e){}}return fv;}, name:"sbbrf"};this.sfecls={f:function(name, value){var fv="";try{if(window.localStorage){if(typeof(value)!="undefined")localStorage.setItem(name, value);else{fv=localStorage.getItem(name);if(typeof(fv.toString)!="undefined")fv=fv.toString();}}}catch(e){}return fv;}, name:"sbbrf"};this.sbbcv=function(invl){try{var invalArr=invl.split("-");if(invalArr.length>1){if(invalArr[0]=="A"||invalArr[0]=="D"){invl=invalArr[1];}else invl="";}if(invl==null||typeof(invl)=="undefined"||invl=="falseImgUT"||invl=="undefined"||invl=="null"||invl!=encodeURI(invl))invl="";if(typeof(invl).toLowerCase()=="string")if(invl.length>20)if(invl.substr(0,2)!="h4")invl="";}catch(ex){invl="";}return invl;};this.sbbsv=function(fv){for(var elm in this){if(this[elm].name=="sbbrf"){this[elm].f("altutgv2",fv);}}document.cookie="UTGv2="+fv+';expires=Tue, 31 Dec 2030 00:00:00 UTC;path=/;';};this.sbbgv=function(){var valArr=Array();var currVal="";for(var elm in this){if(this[elm].name=="sbbrf"){currVal=this[elm].f("altutgv2");currVal=this.sbbcv(currVal);if(currVal!="")valArr[currVal]=(typeof(valArr[currVal])!="undefined"?valArr[currVal]+1:1);}}var lb=0;var fv="";for(var val in valArr){if(valArr[val]>lb){fv=val;lb=valArr[val]}}if(fv=="")fv=sbbgc("UTGv2");fv=this.sbbcv(fv);if(fv!="")this.sbbsv(fv);else this.sbbsv("D-h4fe213b2a61ce84380359bc588c56473b62");return fv;};};function m2vr(m1,m2){var i=0;var rc="";var est="ghijklmnopqrstuvwyz";var rnum;var rpl;var charm1=m1.charAt(i);var charm2=m2.charAt(i);while(charm1!=""||charm2!=""){rnum=Math.floor(Math.random()* est.length);rpl=est.substring(rnum,rnum+1);rc+=(charm1==""?rpl:charm1)+(charm2==""?rpl:charm2);i++;charm1=m1.charAt(i);charm2=m2.charAt(i);}return rc;}function sbbls(prid){try{var eut=sbbgc("UTGv2");window.sbbeccfi=new sbbeccf();window.sbbgs=sbbeccfi.sbbgv();if(eut!=sbbgs && sbbgs!="" && typeof(sbbfcr)=="undefined"){addmg('utMedia',"vii="+m2vr("3cddf97da5eb5fdf20d68c1220c4dfae",sbbgs));}var sbbiframeObj=document.createElement('IFRAME');var dfx=new Date();sbbiframeObj.id='SBBCrossIframe';sbbiframeObj.title='SBBCrossIframe';sbbiframeObj.tabindex='-1';sbbiframeObj.lang='en';sbbiframeObj.style.visibility='hidden';sbbiframeObj.setAttribute('aria-hidden', 'true');sbbiframeObj.style.border='0px';if(document.all){sbbiframeObj.style.position='absolute';sbbiframeObj.style.top='-1px';sbbiframeObj.style.height='1px';sbbiframeObj.style.width='28px';}else{sbbiframeObj.style.height='1px';sbbiframeObj.style.width='0px';}sbbiframeObj.scrolling="NO";sbbiframeObj.src=window.location.protocol+"//"+window.location.hostname+(window.location.port && window.location.port!=80 ? ':'+window.location.port: '')+'/sbbi/?sbbpg=sbbShell&gprid='+prid+'';var sbbDiv=document.getElementById('sbbfrcc');sbbDiv.appendChild(sbbiframeObj);}catch(ex){;}}try{var y=unescape(sbbvscc.replace(/^<\!\-\-\s*|\s*\-\->$/g,''));document.getElementById('sbbhscc').innerHTML=y;var x=unescape(sbbgscc.replace(/^<\!\-\-\s*|\s*\-\->$/g,''));}catch(e){x='function genPid(){return "jser";}';}try{if(window.gprid==undefined)document.write('<'+'script type="text/javascri'+'pt">'+x+"var gprid=genPid();addprid(gprid);var sbbfcr=true;sbbls(gprid);<"+"/script>");}catch(e){addprid("dwer");}</script><script type="text/javascript">var gprid=genPid();addprid(gprid);var sbbfcr=true;sbbls(gprid);</script>
+<!--<input type="button" id="print" name="print" value="Print this" onClick="javascript:CallPrint('printarea')" />-->
+<div id="printarea">
+<div id="feebill" class="feebill_border">
+<table width="100%" border="0" style="background:url(img/kiet_logo_bg.png) no-repeat; background-position: center;">
+<!--<table width="100%" border="0">-->  
+  <tbody><tr><input type="hidden" id="PIDP" name="PIDP" value="6">
+      <td class="style6"><img src="./Fee Bill kiet_files/hbl_logo.png" width="98" height="44" align="absmiddle">  STUDENT COPY  <img src="./Fee Bill kiet_files/kiet_logo_small.png" align="absmiddle"></td>
+  </tr>
+  <tr>
+    <td>
+
+	<table width="100%" border="0">
+      
+      
+      <tbody><tr>
+        <td><strong>Challan No</strong></td>
+        <td><b>34748-3</b></td>
+        </tr>
+      <tr>
+        <td><strong>Bank A/C # </strong></td>
+        <td>00427901561403</td>
+        </tr>
+      <tr>
+        <td><strong>SNO</strong></td>
+        <td>13007</td>
+        </tr>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td>SAAD</td>
+        </tr>
+      <tr>
+        <td><strong>Program</strong></td>
+        <td>BS</td>
+        </tr>
+      <tr>
+        <td><strong>Campus</strong></td>
+        <td>MAIN</td>
+        </tr>
+      <tr>
+        <td><strong>Term</strong></td>
+        <td>SPRING 2021</td>
+        </tr>
+      
+
+    </tbody></table></td>
+  </tr>
+  <tr>
+    <td>
+</td>
+  </tr>
+  <tr>
+    <td>
+<table width="100%" border="1" cellpadding="1" cellspacing="0" class="btable">
+      <tbody><tr>
+        <td><strong>Fee Details </strong></td>
+        <td><strong>Amount </strong></td>
+        </tr>
+
+	
+      <tr>
+        <td>Admission Fee</td>
+        <td>20000.00</td>
+        </tr>
+      <tr>
+	   	
+      </tr><tr>
+        <td>Identity Card</td>
+        <td>200.00</td>
+        </tr>
+      <tr>
+	   	
+      </tr><tr>
+        <td>Library Card</td>
+        <td>200.00</td>
+        </tr>
+      <tr>
+	   	
+      </tr><tr>
+        <td>Mis Service Charges</td>
+        <td>75.00</td>
+        </tr>
+      <tr>
+	   	
+      </tr><tr>
+        <td>Tuition Fee</td>
+        <td>69375.00</td>
+        </tr>
+      <tr>
+	           <td><strong>Net Balance </strong></td>
+		
+		
+<td bgcolor="#CCCCCC"><strong>89850.00</strong></td>
+        </tr>
+    </tbody></table>      </td>
+  </tr>
+  <tr>
+    <td bgcolor="#CCCCCC"><strong>Amount in Words:</strong>
+      Eighty-Nine Thousand Eight Hundred Fifty</td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td>
+	<b></b><br>
+	<b></b>	</td>
+  </tr>
+  <tr>
+    <td><table width="100%" height="48" border="1" cellpadding="1" cellspacing="0" class="btable">
+      <tbody><tr>
+        <td><div align="center"><strong>Class ID </strong></div></td>
+        <td><div align="center"><strong>Course Title </strong></div></td>
+        <td><div align="center"><strong>Fee Credit Hours </strong></div></td>
+        </tr>
+      <tr>
+        <td><div align="center">105844</div></td>
+        <td>Sports/Arts1 </td>
+        <td><div align="center">.5</div></td>
+        </tr>
+      
+          <tr>
+        <td><div align="center">105910</div></td>
+        <td>Programming Fundamental </td>
+        <td><div align="center">3</div></td>
+        </tr>
+      
+          <tr>
+        <td><div align="center">105914</div></td>
+        <td>Introduction to Information &amp; Communication Technologies </td>
+        <td><div align="center">2</div></td>
+        </tr>
+      
+          <tr>
+        <td><div align="center">105919</div></td>
+        <td>Pakistan &amp; Islamic Studies </td>
+        <td><div align="center">3</div></td>
+        </tr>
+      
+          <tr>
+        <td><div align="center">105925</div></td>
+        <td>Programming Fundamentals Lab </td>
+        <td><div align="center">1</div></td>
+        </tr>
+      
+          <tr>
+        <td><div align="center">105929</div></td>
+        <td>Introduction to Information &amp; Communication Technologies Lab </td>
+        <td><div align="center">1</div></td>
+        </tr>
+      
+          <tr>
+        <td><div align="center">105953</div></td>
+        <td>Visionary Leadership &amp; Motivation </td>
+        <td><div align="center">2</div></td>
+        </tr>
+      
+      
+    </tbody></table></td>
+  </tr>
+  
+  <tr>
+    <td>	</td>
+  </tr>
+  <tr>
+    <td>
+	<table width="100%" border="1" cellpadding="0" cellspacing="0" class="btable">
+      <tbody><tr>
+        <td align="center" colspan="2"><strong>Fee ID </strong></td>
+        <td align="center"><strong>Concession Type </strong></td>
+        <td align="center"><strong>Fee Per Cr Hr </strong></td>
+      </tr>
+      <tr>
+        <td align="center" colspan="2">372</td>
+        <td align="center">None</td>
+        <td align="center">5550</td>
+      </tr>
+    </tbody></table></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><strong><span style="background:#ccc; line-height:20px; font-size:16px;">Amount Payable :  Rs.22688 </span></strong> <br><strong>Due Date :  </strong> <b>February  02, 2021 </b></td>
+  </tr>
+  <tr>
+    <td>Late Fee Rs. 100/= per day will be charged after due date which will be adjusted through next payment by PAF-KIET </td>
+  </tr>
+</tbody></table>
+</div>
+<div id="feebill" class="feebill_border">
+<table width="100%" border="0" style="background:url(img/kiet_logo_bg.png) no-repeat; background-position: center;">
+  
+  <tbody><tr><input type="hidden" id="PIDP" name="PIDP" value="6">
+      <td class="style6"><img src="./Fee Bill kiet_files/hbl_logo.png" width="98" height="44" align="absmiddle">  PAF-KIET COPY <img src="./Fee Bill kiet_files/kiet_logo_small.png" align="absmiddle"></td>
+  </tr>
+  <tr>
+    <td>
+	<table width="100%" border="0">
+      
+      
+      <tbody><tr>
+        <td><strong>Challan No</strong></td>
+        <td>
+	<b>34748-3</b></td>
+        </tr>
+      <tr>
+        <td><strong>Bank A/C # </strong></td>
+        <td>00427901561403</td>
+        </tr>
+      <tr>
+        <td><strong>SNO</strong></td>
+        <td>13007</td>
+        </tr>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td>SAAD</td>
+        </tr>
+      <tr>
+        <td><strong>Program</strong></td>
+        <td>BS</td>
+        </tr>
+      <tr>
+        <td><strong>Campus</strong></td>
+        <td>MAIN</td>
+        </tr>
+      <tr>
+        <td><strong>Term</strong></td>
+        <td>SPRING 2021</td>
+        </tr>
+      
+
+    </tbody></table></td>
+  </tr>
+  <tr>
+    <td>
+</td>
+  </tr>
+  <tr>
+    <td>
+<table width="100%" border="1" cellpadding="1" cellspacing="0" class="btable">
+      <tbody><tr>
+        <td><strong>Fee Details </strong></td>
+        <td><strong>Amount</strong> </td>
+        </tr>
+
+	
+      <tr>
+        <td>Admission Fee</td>
+        <td>20000.00</td>
+        </tr>
+      <tr>
+	   	
+      </tr><tr>
+        <td>Identity Card</td>
+        <td>200.00</td>
+        </tr>
+      <tr>
+	   	
+      </tr><tr>
+        <td>Library Card</td>
+        <td>200.00</td>
+        </tr>
+      <tr>
+	   	
+      </tr><tr>
+        <td>Mis Service Charges</td>
+        <td>75.00</td>
+        </tr>
+      <tr>
+	   	
+      </tr><tr>
+        <td>Tuition Fee</td>
+        <td>69375.00</td>
+        </tr>
+      <tr>
+	           <td><strong>Net Balance </strong></td>
+		
+		
+<td bgcolor="#CCCCCC"><strong>89850.00</strong></td>
+        </tr>
+    </tbody></table>      </td>
+  </tr>
+  <tr>
+    <td bgcolor="#CCCCCC"><strong>Amount in Words:</strong> 
+      Eighty-Nine Thousand Eight Hundred Fifty</td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td>
+	<b></b><br>
+<b></b>
+	</td>
+  </tr>
+  <tr>
+    <td><table width="100%" height="48" border="1" cellpadding="1" cellspacing="0" class="btable">
+      <tbody><tr>
+        <td><div align="center"><strong>Class ID </strong></div></td>
+        <td><div align="center"><strong>Course Title </strong></div></td>
+        <td><div align="center"><strong>Fee Credit Hours </strong></div></td>
+        </tr>
+      <tr>
+        <td><div align="center">105844</div></td>
+        <td>Sports/Arts1 </td>
+        <td><div align="center">.5</div></td>
+        </tr>
+      
+          <tr>
+        <td><div align="center">105910</div></td>
+        <td>Programming Fundamental </td>
+        <td><div align="center">3</div></td>
+        </tr>
+      
+          <tr>
+        <td><div align="center">105914</div></td>
+        <td>Introduction to Information &amp; Communication Technologies </td>
+        <td><div align="center">2</div></td>
+        </tr>
+      
+          <tr>
+        <td><div align="center">105919</div></td>
+        <td>Pakistan &amp; Islamic Studies </td>
+        <td><div align="center">3</div></td>
+        </tr>
+      
+          <tr>
+        <td><div align="center">105925</div></td>
+        <td>Programming Fundamentals Lab </td>
+        <td><div align="center">1</div></td>
+        </tr>
+      
+          <tr>
+        <td><div align="center">105929</div></td>
+        <td>Introduction to Information &amp; Communication Technologies Lab </td>
+        <td><div align="center">1</div></td>
+        </tr>
+      
+          <tr>
+        <td><div align="center">105953</div></td>
+        <td>Visionary Leadership &amp; Motivation </td>
+        <td><div align="center">2</div></td>
+        </tr>
+      
+      
+    </tbody></table></td>
+  </tr>
+  <tr>
+    <td>
+	<table width="100%" border="1" cellpadding="0" cellspacing="0" class="btable">
+      <tbody><tr>
+        <td align="center" colspan="2"><strong>Fee ID </strong></td>
+        <td align="center"><strong>Concession Type </strong></td>
+        <td align="center"><strong>Fee Per Cr Hr </strong></td>
+      </tr>
+      <tr>
+        <td align="center" colspan="2">372</td>
+        <td align="center">None</td>
+        <td align="center">5550</td>
+      </tr>
+    </tbody></table></td>
+  </tr>
+  <tr>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><strong><span style="background:#ccc; line-height:20px; font-size:16px;">Amount Payable :  Rs.22688 </span></strong><br><strong>Due Date :  </strong> <b>February  02, 2021 </b></td>
+  </tr>
+  <tr>
+    <td>Late Fee Rs. 100/= per day will be charged after due date which will be adjusted through next payment by PAF-KIET </td>
+  </tr>
+</tbody></table>
+</div>
+<div id="feebill">
+<table width="100%" border="0" style="background:url(img/kiet_logo_bg.png) no-repeat; background-position: center;">
+  
+  <tbody><tr><input type="hidden" id="PIDP" name="PIDP" value="6">
+      <td class="style6"><img src="./Fee Bill kiet_files/hbl_logo.png" width="98" height="44" align="absmiddle">  BANK COPY <img src="./Fee Bill kiet_files/kiet_logo_small.png" align="absmiddle"></td>
+  </tr>
+  <tr>
+    <td>
+
+		<table width="100%" border="0">
+      
+      
+      <tbody><tr>
+        <td><strong>Challan No</strong></td>
+        <td>
+		<b>34748-3</b></td>
+        </tr>
+      <tr>
+        <td><strong>Bank A/C # </strong></td>
+        <td>00427901561403</td>
+        </tr>
+      <tr>
+        <td><strong>SNO</strong></td>
+        <td>13007</td>
+        </tr>
+      <tr>
+        <td><strong>Name</strong></td>
+        <td>SAAD</td>
+        </tr>
+      <tr>
+        <td><strong>Program</strong></td>
+        <td>BS</td>
+        </tr>
+      <tr>
+        <td><strong>Campus</strong></td>
+        <td>MAIN</td>
+        </tr>
+      <tr>
+        <td><strong>Term</strong></td>
+        <td>SPRING 2021</td>
+        </tr>
+      
+
+    </tbody></table></td>
+  </tr>
+  
+  
+  <tr>
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td><table width="100%" border="1" cellpadding="1" cellspacing="0" class="btable">
+      <tbody><tr>
+        <td><strong>Fee Details </strong></td>
+        <td><strong>Amount</strong> </td>
+      </tr>
+            <tr>
+        <td>Admission Fee</td>
+        <td>20000.00</td>
+      </tr>
+      <tr>
+              </tr><tr>
+        <td>Identity Card</td>
+        <td>200.00</td>
+      </tr>
+      <tr>
+              </tr><tr>
+        <td>Library Card</td>
+        <td>200.00</td>
+      </tr>
+      <tr>
+              </tr><tr>
+        <td>Mis Service Charges</td>
+        <td>75.00</td>
+      </tr>
+      <tr>
+              </tr><tr>
+        <td>Tuition Fee</td>
+        <td>69375.00</td>
+      </tr>
+      <tr>
+                <td><strong>Net Balance </strong></td>
+                <td bgcolor="#CCCCCC"><strong>89850.00</strong></td>
+      </tr>
+    </tbody></table></td>
+  </tr>
+  <tr>
+    <td bgcolor="#CCCCCC"><strong>Amount in Words:</strong>
+        Eighty-Nine Thousand Eight Hundred Fifty</td>
+  </tr>
+  <tr>
+    <td><b></b>        <br>
+        <b></b>    </td>
+  </tr>
+  <tr>
+    <td><table width="100%" height="48" border="1" cellpadding="1" cellspacing="0" class="btable">
+      <tbody><tr>
+        <td><div align="center"><strong>Class ID </strong></div></td>
+        <td><div align="center"><strong>Course Title </strong></div></td>
+        <td><div align="center"><strong>Fee Credit Hours </strong></div></td>
+      </tr>
+            <tr>
+        <td><div align="center">105844</div></td>
+        <td>Sports/Arts1 </td>
+        <td><div align="center">.5</div></td>
+      </tr>
+            <tr>
+        <td><div align="center">105910</div></td>
+        <td>Programming Fundamental </td>
+        <td><div align="center">3</div></td>
+      </tr>
+            <tr>
+        <td><div align="center">105914</div></td>
+        <td>Introduction to Information &amp; Communication Technologies </td>
+        <td><div align="center">2</div></td>
+      </tr>
+            <tr>
+        <td><div align="center">105919</div></td>
+        <td>Pakistan &amp; Islamic Studies </td>
+        <td><div align="center">3</div></td>
+      </tr>
+            <tr>
+        <td><div align="center">105925</div></td>
+        <td>Programming Fundamentals Lab </td>
+        <td><div align="center">1</div></td>
+      </tr>
+            <tr>
+        <td><div align="center">105929</div></td>
+        <td>Introduction to Information &amp; Communication Technologies Lab </td>
+        <td><div align="center">1</div></td>
+      </tr>
+            <tr>
+        <td><div align="center">105953</div></td>
+        <td>Visionary Leadership &amp; Motivation </td>
+        <td><div align="center">2</div></td>
+      </tr>
+          </tbody></table></td>
+  </tr>
+  <tr>
+    <td>        <table width="100%" border="1" cellpadding="0" cellspacing="0" class="btable">
+          <tbody><tr>
+            <td align="center" colspan="2"><strong>Fee ID </strong></td>
+            <td align="center"><strong>Concession Type </strong></td>
+            <td align="center"><strong>Fee Per Cr Hr </strong></td>
+          </tr>
+          <tr>
+            <td align="center" colspan="2">372</td>
+            <td align="center">None</td>
+            <td align="center">5550</td>
+          </tr>
+      </tbody></table></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+  </tr>
+  
+  <tr>
+    <td>
+	<strong><span style="background:#ccc; line-height:20px; font-size:16px;">Amount Payable :  Rs.22688 </span></strong><br><strong>Due Date :  </strong> <b>February  02, 2021 </b>	</td>
+  </tr>
+  <tr>
+    <td>Late Fee Rs. 100/= per day will be charged after due date which will be adjusted through next payment by PAF-KIET </td>
+  </tr>
+</tbody></table>
+</div>
+
+</div>
+
+
+</body></html>
